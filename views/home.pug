@@ -1,0 +1,83 @@
+html
+    head
+        title= 'Armor API - Group 5'
+        style
+            include ../assets/homeStyle.css
+        script(src="/javascripts/jquery-3.4.1.min.js")
+        <script>
+            //- $( "#deleteForm" ).submit(function( event ) {
+            //-     console.log($(this).serializeArray());
+            //-     event.preventDefault();
+            //- });
+            //- $( "#putForm" ).submit(function( event ) {
+            //-     console.log($(this).serializeArray());
+            //-     event.preventDefault();
+            //- });
+            //- $( "#getForm" ).submit(function( event ) {
+            //-     console.log($(this).serializeArray());
+            //-     event.preventDefault();
+            //- });
+            //- $( "#postForm" ).submit(function( event ) {
+            //-     console.log($(this).serializeArray());
+            //-     event.preventDefault();
+            //- });
+        </script>
+    body
+        h2 Armor API - Group 5
+        div.actionDivContainer
+            div.actionDiv
+                h4 Search for an armor or a part
+                <form id="getForm">
+                    p Part Name :
+                    input(type="text" name="partName" value="")
+                    p Part Id :
+                    input(type="text" name="partId" value="")
+                    </br>
+                    button() Submit
+                </form>
+
+            div.actionDiv
+                h4 Edit an armor or a part
+                <form id="postForm">
+                    p Part Id :
+                    input(type="text" name="partId" value="")
+                    p Part Name :
+                    input(type="text" name="partName" value="")
+                    p Part Color :
+                    input(type="text" name="partColor" value="")
+                    p Part Defense :
+                    input(type="text" name="partDef" value="")
+                    </br>
+                    button() Submit
+                </form>
+            
+            div.actionDiv
+                h4 Add a new armor or a part
+                <form id="putForm">
+                    p Part Id :
+                    input(type="text" name="partId" value="")
+                    p Part Name :
+                    input(type="text" name="partName" value="")
+                    p Part Color :
+                    input(type="text" name="partColor" value="")
+                    p Part Defense :
+                    input(type="text" name="partDef" value="")
+                    </br>
+                    button() Submit
+                </form>
+
+            div.actionDiv
+                h4 Delete an armor or a part
+                <form id="deleteForm">
+                    p Part Id :
+                    input(type="text" name="partId" value="")
+                    p Part Name :
+                    input(type="text" name="partName" value="")
+                    p Part Color :
+                    input(type="text" name="partColor" value="")
+                    p Part Defense :
+                    input(type="text" name="partDef" value="")
+                    </br>
+                    button() Submit
+                </form>
+    footer
