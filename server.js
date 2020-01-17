@@ -30,7 +30,8 @@ app.get('/api/:part/:id', function (req, res) {
             if (err){
                 res.status(500).send(JSON.parse('{"500":{"Error":"'+err+'"}}'));
             }
-            res.status(200).send(JSON.parse('{"200":{"'+req.params.part+'":"'+req.params.id+'"}}'));
+            res.status(200).send(JSON.stringify(rows));
+            // res.status(200).send(JSON.parse('{"200":{"'+req.params.part+'":"'+req.params.id+'"}}'));
         });
     }else if(armor.includes(req.params.part) == true){
         var options = {sql: 'SELECT armor.armor_Id, helmet.name, helmet.color, helmet.defense,'
