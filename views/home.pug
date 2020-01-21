@@ -4,37 +4,18 @@ html
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         style
             include ../assets/homeStyle.css
-        script(src="/javascripts/jquery-3.4.1.min.js")
-        <script>
-            //- $( "#deleteForm" ).submit(function( event ) {
-            //-     console.log($(this).serializeArray());
-            //-     event.preventDefault();
-            //- });
-            //- $( "#putForm" ).submit(function( event ) {
-            //-     console.log($(this).serializeArray());
-            //-     event.preventDefault();
-            //- });
-            //- $( "#getForm" ).submit(function( event ) {
-            //-     console.log($(this).serializeArray());
-            //-     event.preventDefault();
-            //- });
-            //- $( "#postForm" ).submit(function( event ) {
-            //-     console.log($(this).serializeArray());
-            //-     event.preventDefault();
-            //- });
-        </script>
     body
         h2 Armor API - Group 5
         div.actionDivContainer
             div.actionDiv
                 h4 Search for an armor or a part
-                <form id="getForm">
+                <form id="getForm" method="POST" enctype='multipart/form-data'>
                     p Part Id :
-                    input(type="text" name="partId" value="")
+                    input#getPartId(type="text" name="partId" value="")
                     p Part Name :
-                    input(type="text" name="partName" value="")
+                    input#getPartName(type="text" name="partName" value="")
                     </br>
-                    button() Submit
+                    button#getBtn() Submit
                 </form>
 
             div.actionDiv

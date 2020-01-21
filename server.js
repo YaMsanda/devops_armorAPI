@@ -34,9 +34,10 @@ app.get('/ihm', function(req, res){
     res.status(200).send(pug.renderFile(path.join(__dirname, 'views/home.pug')));
 })
 
+//API Part
 //Express route to call a "SELECT" query on the database
 app.get('/api/:part/:id', function (req, res) {
-    connection.connect();
+    
     //Testing if the ":part" is an armor or a part
     if(parts.includes(req.params.part) == true){
         connection.query('SELECT * FROM '+req.params.part+' WHERE armor_Id = '+req.params.id, function (err, rows, fields) {
@@ -68,7 +69,7 @@ app.get('/api/:part/:id', function (req, res) {
     }else{
         res.status(500).send(JSON.parse('{"500":{"Error":"'+req.params.part+' is not a valid armor part"}}'));
     }
-    connection.end();
+    
 })
 //Express route to call a "UPDATE" query on the database
 app.post('/api/:part/:id', function (req, res) {
@@ -89,7 +90,7 @@ app.post('/api/:part/:id', function (req, res) {
             }
         }
     }
-    connection.connect();
+    
     connection.query('UPDATE '+req.params.part+' SET '+setQuery+' WHERE '+req.params.part+'.armor_Id = '+req.params.id, function (err, rows, fields) {
         if (err){
             res.status(500).send(JSON.parse('{"500":{"Error":"'+err+'"}}'));
@@ -97,7 +98,7 @@ app.post('/api/:part/:id', function (req, res) {
         res.status(200).send(JSON.stringify(rows));
         // res.status(200).send(JSON.parse('{"'+req.params.part+'":['+setJSON+']}'));
     });
-    connection.end();
+    
 })
 
 //Express route to call a "INSERT" query on the database
@@ -129,25 +130,25 @@ app.put('/api/:part/', function (req, res) {
     console.log(setQueryValues);
     var returnJSON = '{"'+req.params.part+'":['+setJSON+']}';
     returnJSON = JSON.parse(returnJSON);
-    connection.connect();
+    
     connection.query('INSERT INTO '+req.params.part+' '+setQueryFields +' VALUES '+setQueryValues, function (err, rows, fields) {
         if (err){
             res.status(500).send(JSON.parse('{"500":{"Error":"'+err+'"}}'));
         }
         res.status(200).send(returnJSON);
     });
-    connection.end();
+    
 })
 //Express route to call a "DELETE" query on the database
 app.delete('/api/:part/:id', function (req, res) {
-    connection.connect();
+    
         connection.query('DELETE FROM '+req.params.part+' WHERE armor_Id = '+req.params.id, function (err, rows, fields) {
             if (err){
                 res.status(500).send(JSON.parse('{"500":{"Error":"'+err+'"}}'));
             }
             res.status(200).send(JSON.stringify(rows));
         });
-    connection.end();
+    
 })
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));

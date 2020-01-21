@@ -74,3 +74,5 @@ For the PUT and POST we will be using the form-data method to provide the additi
 	* "name" : string
 	* "color" : string
 	* "defense" : int
+
+Finally, to start this server, the nginx server will have to execute "npm start" that will trigger "node server.js"
