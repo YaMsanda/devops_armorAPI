@@ -1,6 +1,7 @@
 html
     head
         title= 'Armor API - Group 5'
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         style
             include ../assets/homeStyle.css
         script(src="/javascripts/jquery-3.4.1.min.js")
@@ -28,10 +29,10 @@ html
             div.actionDiv
                 h4 Search for an armor or a part
                 <form id="getForm">
-                    p Part Name :
-                    input(type="text" name="partName" value="")
                     p Part Id :
                     input(type="text" name="partId" value="")
+                    p Part Name :
+                    input(type="text" name="partName" value="")
                     </br>
                     button() Submit
                 </form>

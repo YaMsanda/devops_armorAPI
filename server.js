@@ -29,8 +29,8 @@ var armor = ['armor'];
 app.use(upload.array()); 
 app.use(express.static('public'));
 
-//Express route to get the view
-app.get('/', function(req, res){
+//Express route to get the view, we separated the API domain from the UI domain
+app.get('/ihm', function(req, res){
     res.status(200).send(pug.renderFile(path.join(__dirname, 'views/home.pug')));
 })
 
