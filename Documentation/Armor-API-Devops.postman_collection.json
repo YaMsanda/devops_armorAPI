@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "1645c7e9-bd95-450b-8d53-a0df96e5dd0e",
+		"name": "Armor-API-Devops",
+		"description": "This collection is a part of the documentation for the Armor API in NodeJs for my Devops course.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/api/helmet/1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "color",
+							"value": "rouge",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "caque en  porcelaine",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/helmet/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"helmet",
+						"1"
+					]
+				},
+				"description": "Edit helmet where armor_id = 1"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/helmet/3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:3000/api/helmet/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"helmet",
+						"3"
+					]
+				},
+				"description": "Delete helmet with armor_id = 3"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/legs",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "color",
+							"value": "rouge",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "jambièresen metal",
+							"type": "text"
+						},
+						{
+							"key": "armor_Id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "defense",
+							"value": "50",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/legs",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"legs"
+					]
+				},
+				"description": "Insert of legs with parameters in body/form-data"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/armor/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/armor/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"armor",
+						"1"
+					]
+				},
+				"description": "SELECT requests armor with armor_id = 1"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
